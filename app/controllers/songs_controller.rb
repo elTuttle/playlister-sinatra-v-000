@@ -9,8 +9,8 @@ class SongsController < Sinatra::Base
 
   get '/songs/:slug' do
     @song = Song.find_by_slug(params[:slug])
-    
-    @song
+
+    "#{@song}"
   end
 
 end
