@@ -16,7 +16,7 @@ class SongsController < Sinatra::Base
     params[:genres].each do |genre|
       genres << Genre.find_by(name: genre)
     end
-    song = Song.create(name: params[:name], artist: artist, genres: )
+    song = Song.create(name: params[:name], artist: artist, genres: genres)
     redirect to "/songs/#{song.slug}"
   end
 
