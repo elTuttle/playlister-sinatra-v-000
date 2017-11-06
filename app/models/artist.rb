@@ -11,7 +11,7 @@ class Artist < ActiveRecord::Base
     real_name.delete_if {|x| x == "-"}
     real_name.each {|s| s.capitalize}
     real_name = real_name.join(" ")
-    artist = Artist.find_by(name: real_name)
+    Artist.find_by(name: real_name)
   end
 
 end
