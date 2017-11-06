@@ -7,5 +7,13 @@ class GenresController < Sinatra::Base
     erb :genres
   end
 
+  get '/genres/:slug' do
+    @genre = Genre.find_by_slug(params[:slug])
+    @artists = @genre.artists
+    @songs = @genre.songs
+    #binding.pry
+    erb :genre_slug
+  end
+
 
 end
