@@ -15,4 +15,8 @@ class SongsController < Sinatra::Base
     erb :song_slug
   end
 
+  get '/songs/new' do
+    
+  end
+
 end
