@@ -4,5 +4,5 @@
   <%Genre.all.each do |genre|%>
     <input type="checkbox" name="genres[]" id="<%=genre.name%>" value="<%=genre.name%>" <%= 'checked' if @genres.include?(genre)%>><%=genre.name%></input>
   <%end%>
-  <input type="submit" value="Create">
+  <input type="submit" value="Save">
 </form>
