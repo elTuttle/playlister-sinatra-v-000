@@ -6,5 +6,5 @@ class SongsController < Sinatra::Base
   get '/songs' do
     erb :songs
   end
-  
+
 end
