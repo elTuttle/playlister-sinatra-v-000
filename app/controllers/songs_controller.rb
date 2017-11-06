@@ -29,6 +29,8 @@ class SongsController < Sinatra::Base
     erb :new_song
   end
 
+  post '/songs/update'
+
   get '/songs/:slug' do
     @song = Song.find_by_slug(params[:slug])
     @artist = @song.artist
