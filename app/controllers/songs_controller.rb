@@ -28,6 +28,6 @@ class SongsController < Sinatra::Base
     erb :song_slug
   end
 
-  
+
 
 end
