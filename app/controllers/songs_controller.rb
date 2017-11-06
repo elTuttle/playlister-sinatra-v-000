@@ -13,6 +13,7 @@ class SongsController < Sinatra::Base
       artist = Artist.create(name: params[:artist])
     end
     song = Song.create(name: params[:name], artist: artist)
+    redirect to "/songs/#{song.slug}"
   end
 
   get '/songs/:slug' do
