@@ -1,4 +1,5 @@
 require "rack/flash"
+require "rack/flash/test"
 
 class SongsController < Sinatra::Base
   register Sinatra::ActiveRecordExtension
