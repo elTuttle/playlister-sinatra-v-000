@@ -9,6 +9,10 @@ class SongsController < Sinatra::Base
 
   post '/songs' do
     artist = Artist.find_by(name: params[:artist])
+    if artist == nil
+      artist = Artist.create(name: params[:artist])
+    end
+    song = Song.create(name: params[:name], artist: artist)
   end
 
   get '/songs/:slug' do
