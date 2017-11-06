@@ -29,7 +29,19 @@ class SongsController < Sinatra::Base
     erb :new_song
   end
 
-  post '/songs/update'
+  post '/songs/update' do
+    artist = Artist.find_by(name: params[:artist])
+    if artist == nil
+      artist = Artist.create(name: params[:artist])
+    end
+    genres = []
+    params[:genres].each do |genre|
+      genres << Genre.find_by(name: genre)
+    end
+    song = Song.update(name: params[:name], artist: artist, genres: genres)
+    flash[:message] = "Successfully updated song."
+    redirect to "/songs/#{song.slug}"
+  end
 
   get '/songs/:slug' do
     @song = Song.find_by_slug(params[:slug])
