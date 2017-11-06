@@ -8,12 +8,17 @@ class Song < ActiveRecord::Base
   end
 
   def self.find_by_slug(slug_name)
-    real_name = slug_name.split("-")
-    real_name.delete_if {|x| x == "-"}
-    real_name.each {|s| s.capitalize!}
-    real_name = real_name.join(" ")
-    binding.pry
-    Song.find_by(name: real_name)
+    #real_name = slug_name.split("-")
+    #real_name.delete_if {|x| x == "-"}
+    #real_name.each {|s| s.capitalize!}
+    #real_name = real_name.join(" ")
+    #binding.pry
+    #Song.find_by(name: real_name)
+    Song.all.each do |song|
+      if song.slug == slug_name
+        return song
+      end
+    end
   end
 
 end
