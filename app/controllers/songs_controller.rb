@@ -16,6 +16,10 @@ class SongsController < Sinatra::Base
     redirect to "/songs/#{song.slug}"
   end
 
+  get '/songs/new' do
+    erb :new_song
+  end
+
   get '/songs/:slug' do
     @song = Song.find_by_slug(params[:slug])
     @artist = @song.artist
@@ -24,8 +28,6 @@ class SongsController < Sinatra::Base
     erb :song_slug
   end
 
-  get '/songs/new' do
-    erb :new_song
-  end
+  
 
 end
