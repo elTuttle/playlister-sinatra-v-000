@@ -7,4 +7,12 @@ class ArtistsController < Sinatra::Base
     erb :artists
   end
 
+  get '/artists/:slug' do
+    @artist = Artist.find_by_slug(params[:slug])
+    @songs = @artist.songs
+    @genres = @artist.genres
+    #binding.pry
+    erb :song_slug
+  end
+
 end
