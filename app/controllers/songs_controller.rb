@@ -39,6 +39,7 @@ class SongsController < Sinatra::Base
       genres << Genre.find_by(name: genre)
     end
     song = Song.update(name: params[:name], artist: artist, genres: genres)
+    binding.pry
     flash[:message] = "Successfully updated song."
     redirect to "/songs/#{song.slug}"
   end
