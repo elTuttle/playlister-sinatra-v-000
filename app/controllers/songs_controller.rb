@@ -17,7 +17,7 @@ class SongsController < Sinatra::Base
       genres << Genre.find_by(name: genre)
     end
     song = Song.create(name: params[:name], artist: artist, genres: genres)
-    "Successfully created song."
+    flash[:message] = "Successfully created song."
     redirect to "/songs/#{song.slug}"
   end
 
