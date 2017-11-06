@@ -12,7 +12,7 @@ class ArtistsController < Sinatra::Base
     @songs = @artist.songs
     @genres = @artist.genres
     #binding.pry
-    erb :song_slug
+    erb :artist_slug
   end
 
 end
