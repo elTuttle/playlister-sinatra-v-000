@@ -9,7 +9,7 @@ class Artist < ActiveRecord::Base
   def self.find_by_slug(slug_name)
     real_name = slug_name.split("-")
     real_name.delete_if {|x| x == "-"}
-    real_name.each {|s| s.capitalize}
+    real_name.each {|s| s.capitalize!}
     real_name = real_name.join(" ")
     binding.pry
     Artist.find_by(name: real_name)
