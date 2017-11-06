@@ -12,7 +12,7 @@ class SongsController < Sinatra::Base
     if artist == nil
       artist = Artist.create(name: params[:artist])
     end
-    binding.pry
+    #binding.pry
     song = Song.create(name: params[:name], artist: artist, genres: params[:genres])
     redirect to "/songs/#{song.slug}"
   end
