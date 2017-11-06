@@ -1,4 +1,4 @@
-<form action="/songs" method="POST">
+<form action="/songs/update" method="POST">
   <p>Name: <input type="text" name="name" id="Name" value="<%=@song.name%>"></p>
   <p>Artist: <input type="text" name="artist" id="Artist Name" value="<%=@artist.name%>"></p>
   <%Genre.all.each do |genre|%>
