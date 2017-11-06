@@ -14,5 +14,5 @@ class Song < ActiveRecord::Base
     real_name = real_name.join(" ")
     Song.find_by(name: real_name)
   end
-  
+
 end
