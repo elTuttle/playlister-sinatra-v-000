@@ -9,7 +9,7 @@ class SongsController < Sinatra::Base
 
   get '/songs/:slug' do
     @song = Song.find_by_slug(params[:slug])
-    binding.pry
+    #binding.pry
     erb :song_slug
   end
 
